@@ -1,0 +1,73 @@
+:host {
+    --height__card-header: 64px;
+    --font-size__card-header: 30px;
+}
+
+.tablas-retencion{
+    padding: 32px 32px 32px;
+    min-height: 100vh;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    box-shadow: none;
+
+    mat-card-header {
+        position: relative;
+        width: 100%;
+        box-shadow: 0px 5px 10px #00000029;
+        min-height: var(--height__card-header);
+        ::ng-deep .mat-card-header-text{
+            display: grid;
+            place-items: center;
+            width: 100%;
+            margin: 0 calc(10px + 32px + 5px);
+        }
+        mat-card-title{
+            line-height: var(--font-size__card-header);
+            margin-bottom: 0;
+        }
+    }
+
+    mat-card-content {
+        //width: calc(100% - 2 * var(--padding__page));
+        width: 100%;
+    }
+
+    > p {
+        margin: 0 0 12px 0;
+    }
+    //nose su uso
+    .col {
+        .formControl {
+        width: 100%;
+        display: grid;
+        }
+    }
+    .ciudad,
+    .adjunto,
+    .full {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }//ahsta aca ni idea
+
+    .actions{
+        border-top: gainsboro 1px solid;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        //margin-bottom: 20px;
+        gap: 10px;
+    }
+    //este atributo no es necesario fallas
+    button{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+

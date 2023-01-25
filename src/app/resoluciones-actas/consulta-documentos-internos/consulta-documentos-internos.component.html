@@ -1,0 +1,23 @@
+<mat-card class="c-consulta-documentos-internos">
+  <mat-card-header>
+    <ng-container
+      *ngIf="busquedaComponent?.didSearch || busquedaComponent?.advancedMode"
+    >
+      <button
+        mat-mini-fab
+        color="primary"
+        class="go-back-btn"
+        title="{{ 'BUTTONS_NAMES.GO_BACK_BUTTON' | translate }}"
+        (click)="goBack()"
+      >
+        <mat-icon>west</mat-icon>
+      </button>
+    </ng-container>
+    <mat-card-title>
+      {{ "MODULES.SEARCH.HEADER" | translate }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-busqueda-general></app-busqueda-general>
+  </mat-card-content>
+</mat-card>

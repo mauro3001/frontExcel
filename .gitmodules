@@ -1,0 +1,8 @@
+[submodule "src/environments"]
+	path = src/environments
+	url = ../../../kernel/environments.git
+    branch = .
+[submodule "src/karma-confs-tests"]
+	path = src/karma-confs-tests
+	url = ../../../kernel/karma-confs-tests.git
+	branch = .

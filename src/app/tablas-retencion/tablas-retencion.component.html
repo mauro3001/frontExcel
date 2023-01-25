@@ -1,0 +1,96 @@
+<mat-card class="tablas-retencion">
+  <mat-card-header>
+    <mat-card-title> {{ "MODULES.SEARCH.HEADER" | translate }} </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card>
+      <div>
+        <p [innerHTML]="'CRUD_MESSAGES.HELP_TEXT_UP' | translate"></p>
+      </div>
+      <!-- <div>
+        <mat-label [ngClass]="{
+              'mat-error':
+                (form.controls.adjuntoFileDocument.invalid &&
+                  form.controls.adjuntoFileDocument.touched) ||
+                form.controls.adjuntoFileDocument.hasError('incorrect')
+            }">
+          {{ "FORMS_LABELS.ATTACHED_FILE" | translate }}
+          <small>
+            {{ "FORMS_LABELS.KIND_OF_FILES_ATTACHED_FILE" | translate }}
+          </small>
+        </mat-label>
+        <app-file-chooser></app-file-chooser>
+      </div> -->
+
+      <form
+        [formGroup]="form"
+        (ngSubmit)="saveDocumento($event)"
+        class="formulario"
+      >
+        <!--Adjunto del documento-->
+        <div class="col adjunto">
+          <mat-label>
+            {{ "FORMS_LABELS.ATTACHED_FILE" | translate }}
+            <small>{{
+              "FORMS_LABELS.KIND_OF_FILES_ATTACHED_FILE" | translate
+            }}</small></mat-label
+          >
+          <app-file-chooser
+            appAdjuntosUrlDescarga
+            (files)="obtenerArchivos($event)"
+            [idAdjunto]="form.controls.idDocumentoAdjunto.value"
+            [insertMode]="!editMode"
+            [editMode]="editMode"
+          ></app-file-chooser>
+          <mat-hint
+            *ngIf="
+              form.controls.adjuntoFileDocument.invalid &&
+              form.controls.adjuntoFileDocument.touched &&
+              !form.controls.adjuntoFileDocument.hasError('incorrect') &&
+              !form.controls.adjuntoFileDocument.hasError('fileType')
+            "
+          >
+            <span class="mat-error tamano-error">
+              {{
+                "MODULES.HOJA_DE_VIDA.GESTIONAR_HV.ON_NOT_ADJUNTO" | translate
+              }}
+            </span>
+          </mat-hint>
+          <mat-hint
+            *ngIf="form.controls.adjuntoFileDocument.hasError('incorrect')"
+          >
+            <span class="mat-error tamano-error">
+              {{ form.controls.adjuntoFileDocument.getError("incorrect") }}
+            </span>
+          </mat-hint>
+          <mat-hint
+            *ngIf="form.controls.adjuntoFileDocument.hasError('fileType')"
+          >
+            <span class="mat-error tamano-error">
+              {{ form.controls.adjuntoFileDocument.getError("fileType") }}
+            </span>
+          </mat-hint>
+        </div>
+      </form>
+      <br />
+      <div class="actions">
+        <button
+          class="btn-search"
+          mat-stroked-button
+          type="button"
+          (click)="limpiarFormulario()"
+        >
+          {{ "BUTTONS_NAMES.CLEAN_CONSULTA_BUTTON" | translate }}
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="buscar()"
+        >
+          {{ "BUTTONS_NAMES.CONSULTA_BUTTON" | translate }}
+        </button>
+      </div>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

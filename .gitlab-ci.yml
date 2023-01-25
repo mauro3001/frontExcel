@@ -1,0 +1,7 @@
+include:
+  - project: 'rsi/configuracion/cicd'
+    ref: main
+    file: '.gitlab-ci-base-front.yml'
+
+variables:
+  PROJECT: resolucionesyactas

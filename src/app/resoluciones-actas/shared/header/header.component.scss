@@ -1,0 +1,12 @@
+.app-header {
+    height: var(--height__header);
+    background-color: var(--main-color);
+    padding: 5px 16px;
+    display: flex;
+    align-items: center;
+    & img {
+        height: 100%;
+        width: auto;
+        margin: 0 !important;
+    }
+}

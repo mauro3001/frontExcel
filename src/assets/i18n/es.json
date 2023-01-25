@@ -1,0 +1,77 @@
+{
+    "CRUD_MESSAGES": {
+        "ON_SAVE": "Se ha creado correctamente el registro.",
+        "ON_SAVE_MULTIPLE": "Se han creado correctamente los registros.",
+        "ON_UPDATE": "Se ha editado correctamente el registro.",
+        "ON_DELETE": "Se ha eliminado correctamente el registro.",
+        "ON_DELETE_MULTIPLE": "Se han eliminado correctamente los registros.",
+        "ON_SUCCESS_SEARCH": "El resultado de su consulta se muestra en la parte inferior de la pantalla.",
+        "ON_ERROR_UNKNOWN": "Ha ocurrido un error inesperado.",
+        "ON_MULTIPLE_ERRORS": "Han ocurrido errores, favor verificar.",
+        "ON_404_SEARCH": "No se encontraron resultados que coincidan con los criterios de búsqueda introducidos, intente nuevamente.",
+        "ON_SEARCH_RECORDS_GT": "El resultado de su consulta arroja más de {{value}} registros. Se recomienda precisar el criterio de búsqueda.",
+        "ON_UPDATE_ADJUNTO": "Se ha actualizado correctamente el archivo adjunto.",
+        "ON_UPDATE_ADJUNTO_ERROR": "Ha ocurrido un error actualizando el archivo adjunto.",
+        "ON_SAVE_MULTIPLE_WITH_ERRORS": "Se encontraron errores en algunos registros, por favor validar.",
+        "ON_GENERATED_FILE": "Se ha generado correctamente el archivo.",
+        "ON_EXPORT_FILE_ERROR_SEARCH": "No hay registros para exportar que coincidan con los parámetros de búsqueda introducidos, intente nuevamente.",
+        "ON_404_EXPORT_FILE_REPORT_DATA": "No se encontraron datos para generar el reporte.",
+        "ON_EXPORT_EXCEL_WITHOUT_COLUMNS_ERROR": "Debe seleccionar al menos una columna para el reporte.",
+        "ON_ACTIVATE_RECORD": "El registro ha sido activado.",
+        "ON_DEACTIVATE_RECORD": "El registro ha sido desactivado.",
+        "ON_ACTIVATE_PARENT_RECORDS": "Los registros han sido activados.",
+        "ON_DEACTIVATE_PARENT_RECORDS": "Los registros han sido desactivados.",
+        "ON_ERROR_SAVE_EXCEL_CONF_EXPORT": "No se pudo guardar la configuración debido a un error inesperado.",
+        "ON_ADJUNTO_DOWNLOAD_ERROR": "No se ha podido descargar el archivo adjunto.",
+        "LABEL_ON_SEARCH_BEFORE_TABLE": "Resultados de la consulta",
+        "LABEL_ON_ADD_BEFORE_TABLE": "Registro creado",
+        "LABEL_BEFORE_TABLE_SIMPLE": "Listado {{seccion}}",
+        "HELP_TEXT_UP": "Ingrese un criterio de búsqueda y seleccione la opción <b>consultar</b> para encontrar resultados"
+    },
+    "FORMS_ERROR_MESSAGES": {
+        "DEFAULT": "El valor de este campo no es válido.",
+        "NUMBER_RANGE": "El valor de este campo no es válido, debe estar en el rango de {{valor1}} a {{valor2}}.",
+        "FECHA_DESDE_GT_TODAY": "Fecha desde debe ser superior o igual a la fecha actual.",
+        "FECHA_DESDE_LT_TODAY": "Fecha desde debe ser inferior o igual  a la fecha actual.",
+        "FECHA_HASTA_GT_FECHA_DESDE": "Fecha hasta debe ser superior o igual a la fecha desde.",
+        "ON_FIELDS_SEARCH_REQUIRED": "Debe ingresar los criterios de búsqueda requeridos.",
+        "ON_EMPTY_FORM_ON_SEARCH_NOT_REQUIRED_FIELDS": "Debe ingresar al menos un criterio para realizar la consulta."
+    },
+    "FIELDS_PLACEHOLDERS": {
+        "SEARCH_INPUT_SELECT": "Búsque y seleccione <div>{{value}}</div>",
+        "INPUT_TEXT": "Digite {{value}}",
+        "DATE_DDMMAAAA_PLACEHOLDER": "dd/mm/aaaa"
+    },
+    "TABLE_OPTIONS": {
+        "PAGINATOR": {
+            "ITEMS_PER_PAGE": "Registros por página",
+            "NEXT_PAGE": "Siguiente página",
+            "FIRST_PAGE": "Primera página",
+            "LAST_PAGE": "Última página",
+            "PREVIOUS_PAGE": "Página anterior",
+            "RANGE": "{{startIndex}} - {{endIndex}} de {{length}}"
+        }
+    },
+    "BUTTONS_NAMES": {
+        "ADD_BUTTON": "Nuevo registro",
+        "SAVE_BUTTON": "Guardar",
+        "CLEAN_BUTTON": "Limpiar formulario",
+        "DELETE_BUTTON": "Eliminar",
+        "CLEAN_CONSULTA_BUTTON": "Limpiar consulta",
+        "CONSULTA_BUTTON": "Consultar"
+    },
+    "BUTTONS_TITLES": {
+        "ADD_BUTTON_TITLE": "Agregar nuevo registro"
+    },
+    "FORMS_LABELS": {
+        "DESCRIPTION_LABEL": "Descripción",
+        "DATE_LABEL": "Fecha",
+        "DATE_FROM_LABEL": "Fecha desde",
+        "DATE_TO_LABEL": "Fecha hasta",
+        "ISFESTIVO_LABEL": "¿Festivo? *",
+        "FESTIVO_LABEL": "Festivo ",
+        "DATE_AS_OF_LABEL": "Fecha a partir de",
+        "DATE_LTOE_TO_LABEL": "Fecha menor o igual a"
+    },
+    "MODULES": {}
+}

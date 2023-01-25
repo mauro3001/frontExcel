@@ -1,0 +1,210 @@
+<mat-card
+  class="busqueda-general-wrapper {{ didSearch ? 'search' : '' }} {{
+    (didClearForm && didSearch) || noDocumentsFound ? 'no-search-content' : ''
+  }}"
+>
+  <ng-container *ngIf="!didSearch">
+    <img
+      class="uis-logo"
+      src="./assets/logos/uis-variant.png"
+      alt="Universidad Industrial de Santander"
+    />
+  </ng-container>
+
+  <ng-container *ngIf="didSearch">
+    <p
+      [innerHTML]="
+        (!advancedMode
+          ? 'MODULES.SEARCH.SEARCH_CAPTION'
+          : 'MODULES.SEARCH.ADVANCED_SEARCH_CAPTION'
+        ) | translate
+      "
+    ></p>
+  </ng-container>
+  <div class="search-wrapper {{ didSearch ? 'searched' : '' }}">
+    <ng-container *ngIf="!advancedMode; else advancedSearchForm">
+      <form [formGroup]="form" [style.max-width]="formMaxWidth">
+        <mat-form-field appearance="fill" class="form-control">
+          <mat-label>{{
+            "MODULES.SEARCH.GENERAL_SEARCH.LABEL" | translate
+          }}</mat-label>
+          <input
+            placeholder="{{
+              'MODULES.SEARCH.GENERAL_SEARCH.PLACEHOLDER' | translate
+            }}"
+            formControlName="palabrasClave"
+            (keyup.enter)="search()"
+            matInput
+            type="text"
+            required="true"
+          />
+          <mat-icon matPrefix>search</mat-icon>
+          <mat-error
+            *ngIf="form.controls['palabrasClave'].hasError('required')"
+          >
+            {{ "FORMS_ERROR_MESSAGES.DEFAULT" | translate }}
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </ng-container>
+    <ng-template #advancedSearchForm>
+      <form
+        [formGroup]="formAdvancedSearch"
+        class="advanced-form"
+        [style.max-width]="formMaxWidth"
+      >
+        <mat-form-field appearance="fill" class="entidad">
+          <mat-label for="entidadEmisora">{{
+            "MODULES.SEARCH.ADVANCED_SEARCH.ISSUING_ENTITY_LABEL" | translate
+          }}</mat-label>
+          <mat-select
+            formControlName="entidadEmisora"
+            placeholder="{{
+              'MODULES.SEARCH.ADVANCED_SEARCH.ISSUING_ENTITY_PLACEHOLDER'
+                | translate
+            }}"
+            panelClass="entidad-emisora-panel"
+          >
+            <mat-option
+              *ngFor="let entity of entities"
+              [value]="entity.id"
+              [title]="entity.nombreCompleto"
+            >
+              {{ entity.displayName }}
+            </mat-option>
+          </mat-select>
+          <mat-icon matPrefix>business</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="noPublicacion">
+          <mat-label>{{
+            "MODULES.SEARCH.ADVANCED_SEARCH.PUB_NUMBER_LABEL" | translate
+          }}</mat-label>
+          <input
+            placeholder="{{
+              'MODULES.SEARCH.ADVANCED_SEARCH.PUB_NUMBER_PLACEHOLDER'
+                | translate
+            }}"
+            formControlName="numeroPublicacion"
+            (keyup.enter)="search()"
+            matInput
+            numbersOnly
+            onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+          />
+          <mat-icon matPrefix>tag</mat-icon>
+          <mat-error
+            *ngIf="formAdvancedSearch.get('numeroPublicacion').invalid"
+          >
+            {{ "FORMS_ERROR_MESSAGES.DEFAULT" | translate }}
+          </mat-error>
+        </mat-form-field>
+        <!--Agregando dos campos para rango de fecha-->
+        <mat-form-field appearance="fill" class="fechaInicial">
+          <mat-label>{{ "COMMON_LABELS.DATE_FROM" | translate }}</mat-label>
+          <input
+            formControlName="dateInitial"
+            placeholder="{{
+              'FIELDS_PLACEHOLDERS.DATE_DDMMAAAA_PLACEHOLDER' | translate
+            }}"
+            matInput
+            [max]="formAdvancedSearch.controls.dateFinal.value"
+            [matDatepicker]="datePickerInitial"
+          />
+          <mat-datepicker-toggle matSuffix [for]="datePickerInitial">
+          </mat-datepicker-toggle>
+          <mat-datepicker #datePickerInitial startView="month">
+          </mat-datepicker>
+          <mat-error *ngIf="formAdvancedSearch.get('dateInitial').invalid">
+            {{ "FORMS_ERROR_MESSAGES.DEFAULT" | translate }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="fechaFinal">
+          <mat-label>{{
+            "COMMON_LABELS.DATE_TO_PLACEHOLDER" | translate
+          }}</mat-label>
+          <input
+            formControlName="dateFinal"
+            placeholder="{{
+              'FIELDS_PLACEHOLDERS.DATE_DDMMAAAA_PLACEHOLDER' | translate
+            }}"
+            matInput
+            [min]="formAdvancedSearch.controls.dateInitial.value"
+            [matDatepicker]="datePickerFinal"
+          />
+          <mat-datepicker-toggle matSuffix [for]="datePickerFinal">
+          </mat-datepicker-toggle>
+          <mat-datepicker #datePickerFinal> </mat-datepicker>
+          <mat-error *ngIf="formAdvancedSearch.get('dateFinal').invalid">
+            {{ "FORMS_ERROR_MESSAGES.DEFAULT" | translate }}
+          </mat-error>
+        </mat-form-field>
+        <!--Finalizacion de agregacion-->
+        <mat-error
+          class="{{
+            notFields && formAdvancedSearch.get('anoExpedicion').valid
+              ? ''
+              : 'not-visible'
+          }}"
+        >
+          {{ "MODULES.SEARCH.ADVANCED_SEARCH.MINIMUM_CRITERIA" | translate }}
+        </mat-error>
+      </form>
+    </ng-template>
+    <div class="actions">
+      <!-- el usuario no ha realizado ninguna busqueda -->
+      <ng-container *ngIf="!advancedMode; else inAdvancedSearch">
+        <button
+          mat-stroked-button
+          type="button"
+          (click)="toggleSearchMode(true)"
+        >
+          {{ "MODULES.SEARCH.ADVANCED_SEARCH_BUTTON" | translate }}
+        </button>
+      </ng-container>
+      <ng-template #inAdvancedSearch>
+        <button
+          mat-stroked-button
+          type="button"
+          (click)="
+            formAdvancedSearch.reset(); didClearForm = true; notFields = false
+          "
+        >
+          {{ "MODULES.SEARCH.CLEAR_SEARCH_BUTTON" | translate }}
+        </button>
+      </ng-template>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="search()"
+      >
+        {{ "MODULES.SEARCH.SEARCH_BUTTON" | translate }}
+      </button>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card
+  class="search-content-wrapper not-see{{ didSearch ? 'visible' : '' }}"
+>
+  <div
+    class="search-content {{ noDocumentsFound || didClearForm ? 'hide' : '' }}"
+  >
+    <h1>{{ "MODULES.SEARCH.FOUND_DOCUMENTS.TITLE" | translate }}</h1>
+    <app-mat-table-full
+      #tabla
+      [options]="optionsTable"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (view)="view($event)"
+    ></app-mat-table-full>
+  </div>
+  <ng-container *ngIf="noDocumentsFound && !didClearForm">
+    <p class="textCenter">
+      {{ "MODULES.SEARCH.NOT_FOUND_DOCUMENTS" | translate }}
+    </p>
+  </ng-container>
+  <ng-container *ngIf="didClearForm">
+    <p class="textCenter">
+      {{ "MODULES.SEARCH.NOT_SEARCH_DOCUMENTS" | translate }}
+    </p>
+  </ng-container>
+</mat-card>

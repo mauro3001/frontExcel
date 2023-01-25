@@ -1,0 +1,77 @@
+{
+    "CRUD_MESSAGES": {
+        "ON_SAVE": "The record has been successfully created.",
+        "ON_SAVE_MULTIPLE": "The records have been created correctly.",
+        "ON_UPDATE": "The record has been successfully edited.",
+        "ON_DELETE": "The record has been successfully deleted.",
+        "ON_DELETE_MULTIPLE": "The records have been successfully deleted.",
+        "ON_SUCCESS_SEARCH": "The result of your query is displayed at the bottom of the screen.",
+        "ON_ERROR_UNKNOWN": "An unexpected error has occurred.",
+        "ON_MULTIPLE_ERRORS": "Errors have occurred, please check.",
+        "ON_404_SEARCH": "No results were found matching the search criteria entered, please try again.",
+        "ON_SEARCH_RECORDS_GT": "The result of your query yields more than {{value}} records. It is recommended that you refine the search criteria.",
+        "ON_UPDATE_ADJUNTO": "The attachment has been successfully updated.",
+        "ON_UPDATE_ADJUNTO_ERROR": "An error occurred updating the attachment.",
+        "ON_SAVE_MULTIPLE_WITH_ERRORS": "Errors were found in some records, please validate.",
+        "ON_GENERATED_FILE": "The file has been successfully generated.",
+        "ON_EXPORT_FILE_ERROR_SEARCH": "There are no records to export that match the search parameters entered, try again.",
+        "ON_404_EXPORT_FILE_REPORT_DATA": "No data was found to generate the report.",
+        "ON_EXPORT_EXCEL_WITHOUT_COLUMNS_ERROR": "You must select at least one column for the report.",
+        "ON_ACTIVATE_RECORD": "Registration has been activated.",
+        "ON_DEACTIVATE_RECORD": "Registration has been deactivated.",
+        "ON_ACTIVATE_PARENT_RECORDS": "The records have been activated.",
+        "ON_DEACTIVATE_PARENT_RECORDS": "The records have been deactivated.",
+        "ON_ERROR_SAVE_EXCEL_CONF_EXPORT": "The configuration could not be saved due to an unexpected error.",
+        "ON_ADJUNTO_DOWNLOAD_ERROR": "The attachment could not be downloaded.",
+        "LABEL_ON_SEARCH_BEFORE_TABLE": "Results of the consultation",
+        "LABEL_ON_ADD_BEFORE_TABLE": "Registration created",
+        "LABEL_BEFORE_TABLE_SIMPLE": "Listing {{seccion}}",
+        "HELP_TEXT_UP": "Enter a search criteria and select the option <b>consult</b> to find results"
+    },
+    "FORMS_ERROR_MESSAGES": {
+        "DEFAULT": "The value of this field is invalid.",
+        "NUMBER_RANGE": "The value of this field is not valid, it must be in the range {{valor1}}} to {{valor2}}.",
+        "FECHA_DESDE_GT_TODAY": "Date from must be greater than or equal to the current date.",
+        "FECHA_DESDE_LT_TODAY": "Date from must be less than or equal to the current date.",
+        "FECHA_HASTA_GT_FECHA_DESDE": "Date to must be greater than or equal to the date from.",
+        "ON_FIELDS_SEARCH_REQUIRED": "You must enter the required search criteria.",
+        "ON_EMPTY_FORM_ON_SEARCH_NOT_REQUIRED_FIELDS": "You must enter at least one criterion to perform the query."
+    },
+    "FIELDS_PLACEHOLDERS": {
+        "SEARCH_INPUT_SELECT": "Search and select {{value}}",
+        "INPUT_TEXT": "Type {{value}}",
+        "DATE_DDMMAAAA_PLACEHOLDER": "dd/mm/aaaa"
+    },
+    "TABLE_OPTIONS": {
+        "PAGINATOR": {
+            "ITEMS_PER_PAGE": "Items per page",
+            "NEXT_PAGE": "Next page",
+            "FIRST_PAGE": "First page",
+            "LAST_PAGE": "Last page",
+            "PREVIOUS_PAGE": "Previous page",
+            "RANGE": "{{startIndex}} - {{endIndex}} of {{length}}"
+        }
+    },
+    "BUTTONS_NAMES": {
+        "ADD_BUTTON": "New Register",
+        "SAVE_BUTTON": "Save",
+        "CLEAN_BUTTON": "Clean form",
+        "DELETE_BUTTON": "Delete",
+        "CLEAN_CONSULTA_BUTTON": "Clean consultation",
+        "CONSULTA_BUTTON": "Consult"
+    },
+    "BUTTONS_TITLES": {
+        "ADD_BUTTON_TITLE": "Add a new register"
+    },
+    "FORMS_LABELS": {
+        "DESCRIPTION_LABEL": "Description",
+        "DATE_LABEL": "Date",
+        "DATE_FROM_LABEL": "Date from",
+        "DATE_TO_LABEL": "Date to",
+        "ISFESTIVO_LABEL": "¿Holiday? *",
+        "FESTIVO_LABEL": "Holiday ",
+        "DATE_AS_OF_LABEL": "Date as of",
+        "DATE_LTOE_TO_LABEL": "Date less than or equal to"
+    },
+    "MODULES": {}
+}

@@ -1,0 +1,502 @@
+@import "variables";
+@import "./styles/scrollbar";
+/* You can add global styles to this file, and also import other style files */
+
+p,
+input,
+textarea,
+td,
+.text-muted,
+.faint-text,
+.mat-input-element,
+.mat-datepicker-toggle,
+.mat-select-arrow,
+mat-label,
+mat-option .mat-option-text,
+mat-checkbox .mat-checkbox-label,
+mat-radio-button label,
+mat-form-field .mat-form-field-flex mat-icon,
+mat-form-field .mat-form-field-flex input {
+  color: var(--text-color-main);
+}
+
+mat-row.highlight {
+  background-color: lightgray !important;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px 20px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .container {
+      max-width: 1110px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Open Sans", sans-serif;
+  background-color: #f5ecce;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  background-color: var(--main-color);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: var(--main-color);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--main-color);
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: var(--main-color);
+}
+
+.mat-radio-group .mat-radio-disabled .mat-radio-outer-circle {
+  border-color: var(--borde-botones-blancos) !important;
+}
+
+.mat-radio-group .mat-radio-disabled .mat-radio-inner-circle {
+  background-color: var(--borde-botones-blancos);
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 24px !important;
+  color: var(--secondary-color);
+}
+
+.mat-toolbar.mat-primary {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.mat-form-field-prefix .mat-icon {
+  color: var(--text-color-main);
+}
+
+.mat-form-field-suffix .mat-icon {
+  color: var(--text-color-main);
+}
+
+.mat-badge-content {
+  color: #fff;
+  background: var(--main-color);
+}
+
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: var(--main-color);
+}
+
+.mat-badge-content {
+  color: #fff;
+  background: var(--main-color);
+}
+
+.mat-stroked-button.mat-primary {
+  color: var(--main-color);
+}
+
+.mat-mini-fab.mat-primary {
+  background-color: var(--main-color);
+}
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background,
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: var(--main-color);
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
+  background: var(--main-color);
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.mat-calendar-body-selected {
+  background-color: var(--main-color);
+  color: #fff !important;
+}
+
+.mat-datepicker-toggle-active {
+  color: var(--main-color);
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--main-color);
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--main-color);
+}
+
+.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
+  color: var(--main-color);
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: var(--main-color);
+}
+
+.mat-icon.mat-primary {
+  color: var(--main-color);
+}
+
+.mat-input-element {
+  caret-color: var(--main-color);
+}
+
+.mat-progress-bar-fill::after {
+  background-color: var(--main-color);
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: var(--main-color);
+}
+
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--main-color);
+}
+
+.mat-radio-button.mat-primary .mat-radio-inner-circle,
+.mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+  background-color: var(--main-color);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: var(--main-color);
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--main-color);
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
+  background-color: var(--main-color);
+}
+
+.mat-primary .mat-slider-track-fill,
+.mat-primary .mat-slider-thumb,
+.mat-primary .mat-slider-thumb-label {
+  background-color: var(--main-color);
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: var(--main-color);
+}
+
+.mat-tab-group.mat-background-primary>.mat-tab-header,
+.mat-tab-group.mat-background-primary>.mat-tab-link-container,
+.mat-tab-group.mat-background-primary>.mat-tab-header-pagination,
+.mat-tab-nav-bar.mat-background-primary>.mat-tab-header,
+.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container,
+.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination {
+  background-color: var(--main-color);
+}
+
+.mat-toolbar.mat-primary {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.modalax12789>mat-dialog-container {
+  padding: 0px !important;
+}
+
+.error {
+  background: red;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.success {
+  background: green;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.warning {
+  background: orange;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hideElement {
+  display: none;
+}
+
+.disabled-text {
+  color: rgba(0, 0, 0, 0.479) !important;
+}
+
+@media print {
+
+  .hide-print,
+  .mat-snack-bar-container,
+  mat-sidenav {
+    display: none !important;
+  }
+
+  .mat-sidenav-content {
+    margin: 0px !important;
+  }
+
+  :not(.marco, .show) {
+    overflow: hidden !important;
+    height: auto !important;
+  }
+}
+
+.formulario,
+.row,
+.row2,
+.container {
+
+  p,
+  .gris,
+  .adjunto {
+    color: var(--text-color-main);
+  }
+
+  ::ng-deep mat-icon {
+    color: var(--text-color-main) !important;
+  }
+
+  mat-form-field:not(.mat-form-field-invalid) {
+    color: var(--text-color-main);
+  }
+
+  mat-select:not(.mat-form-field-invalid) {
+    color: var(--text-color-main) !important;
+  }
+
+  ::ng-deep .mat-select-value-text {
+    color: var(--text-color-main) !important;
+  }
+
+  ::ng-deep .mat-select-min-line {
+    color: var(--text-color-main) !important;
+  }
+
+  ::ng-deep .mat-select-value,
+  .mat-select-value-text {
+    color: var(--text-color-main) !important;
+  }
+
+  ::ng-deep .mat-input-element {
+    color: var(--text-color-main);
+  }
+}
+
+.visualization-field-modal {
+  margin-bottom: 0px;
+  color: var(--text-color-main);
+  border-radius: 10px;
+  border: 1px solid var(--text-color-main);
+  padding: 4.9px 10.5px 15px 10.5px;
+
+  .contenedor-datos {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    .item {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .label {
+        font-weight: bold;
+      }
+
+      div {
+        height: auto;
+        word-break: break-all;
+      }
+    }
+
+    .adjunto {
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    .full {
+      flex-direction: column;
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+}
+
+mat-cell {
+  color: var(--text-color-main) !important;
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+  background-color: var(--main-color-9);
+}
+
+app-confirm .modal .body {
+  color: var(--text-color-main);
+}
+
+.title-card-h {
+  display: flex;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.view-mode-border-line {
+  margin-bottom: 20px;
+  border: 1px solid #6666;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+
+.toggle {
+  display: flex;
+  align-items: center;
+}
+
+.mat-button-toggle-checked {
+  background-color: var(--main-color);
+  color: white !important;
+}
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 36px;
+}
+
+// ---------------------------------------
+
+
+p {
+  color: var(--text-color-main);
+}
+
+
+form {
+  *:disabled {
+    color: rgba(0, 0, 0, 0.479) !important;
+  }
+  .mat-form-field-disabled {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-infix {
+          .mat-form-field-label {
+            color: rgba(0, 0, 0, 0.479) !important;
+          }
+        }
+      }
+    }
+    mat-icon {
+      color: rgba(0, 0, 0, 0.479) !important;
+    }
+  }
+}
+
+button.mat-stroked-button {
+  border-color: var(--text-color-main) !important;
+  color: var(--text-color-main);
+}
+
+.mat-option-text, .mat-select-value, form mat-icon, mat-calendar .mat-button-wrapper, mat-calendar .mat-calendar-body-cell-content {
+  color: var(--text-color-main);
+}
+
+form input {
+  color: var(--text-color-main) !important;
+}
+
+.mat-form-field-label {
+  line-height: 17px !important;
+}
+
+
+@media screen and (max-width: 960px) {
+  :root {
+    --padding__page: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --padding__page: 5px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
